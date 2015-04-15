@@ -12,6 +12,12 @@ token = #'put your token here'
 
 channel = #'your channel aka group number. Get it from groups.list'
 
+# Regex for timestamps /"[0-9\.]+"/
+# Christoph's regex string 
+# /$  \],$  "has_more": true$\}$new_message_page\{$  "ok": true,$  "latest": "[0-9\.]+",$  "messages": \[/m
+# save to regex = /$  \],$  "has_more": true$\}$new_message_page\{$  "ok": true,$  "latest": "[0-9\.]+",$  "messages": \[/m
+# regex.class
+# regex.match content --- content is the buffer that contains my_file.read
 
 response = HTTParty.get('https://slack.com/api/groups.history?token=' + token + '&channel=' + channel + '&count=1000&pretty=1')
 
